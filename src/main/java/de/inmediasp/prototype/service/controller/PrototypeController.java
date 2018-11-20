@@ -22,11 +22,11 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class PrototypeController {
 	private Random rnd= new Random();
 	
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "*")
 	@RequestMapping(value="/login", method = RequestMethod.POST)
 	public ResponseEntity<Map<String,Object>> login(@RequestBody LoginData loginData) {
 
@@ -51,8 +51,7 @@ public class PrototypeController {
 	private static String firstName[]= {"Heinz", "Helga", "Daria", "Uwe", "Max", "Egon", "Janis", "Sascha", "Angela", "Björn", "Jogi", "Hans", "Peter", "Gustav"};
 	private static String lastName[]= {"Merkel", "Schmidt", "Schulz", "Müller", "Lehmann", "Rehhagel", "Buschmann", "Kliensmann", "Löw", "Genscher"};
 	
-	@CrossOrigin(origins = "http://localhost:4200")
-	
+	@CrossOrigin(origins = "*")
 	@RequestMapping(value="/users", method = RequestMethod.GET, produces = { "application/json", "text/json" })
 	public List<User> userList() {
 		List<User> ret= new ArrayList<>();
